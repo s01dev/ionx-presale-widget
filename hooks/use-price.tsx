@@ -7,7 +7,7 @@ const usePrice = () => {
   const { data, isLoading, error } = useQuery({
     queryKey: ["priceData"],
     queryFn: async () => {
-      const result = await axios.get("https://price.isg.fi/price");
+      const result = await axios.get("https://coinfetcher-price-6efi.onrender.com/price");
 
       return { ...result.data.price, USDT: 1, USDC: 1, BUSD: 1, IONX: 0.021 };
     },
